@@ -1,6 +1,17 @@
+// var token = process.env.TOKEN;
 var token = '229884956:AAEGSuK8l9Chqcl8uMjty5lz4RnRjaKBPIU';
-var Bot = require('node-telegram-bot-api'),
-    bot = new Bot(token, { polling: true });
+
+var Bot = require('node-telegram-bot-api');
+var bot;
+
+if(process.env.NODE_ENV === 'production') {
+  bot = new Bot(token);
+  // bot.setWebHook(process.env.HEROKU_URL + bot.token);
+  bot.setWebHook('https://mysterious-harbor-86548.herokuapp.com/' + bot.token);
+}
+else {
+  bot = new Bot(token, { polling: true });
+}
 
 console.log('bot server started...');
 
@@ -22,3 +33,5 @@ bot.onText(/^\/sum((\s+\d+)+)$/, function (msg, match) {
     // reply sent!
   });
 });
+
+module.exports = bot;
