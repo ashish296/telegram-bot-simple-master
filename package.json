@@ -1,11 +1,11 @@
 {
   "name": "telegram-demo-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple telegram bot server in node.js using webhook.",
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.14.1",
-    "express": "^4.13.3",
+    "express": "^4.14.0",
     "node-telegram-bot-api": "^0.20.1"
   },
   "devDependencies": {},
@@ -13,6 +13,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "ashish.verma@nidarooms.com",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashish296/telegram-testbot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashish296/telegram-testbot/issues"
+  },
+  "homepage": "https://github.com/ashish296/telegram-testbot#readme"
 }
